@@ -8,7 +8,7 @@ import lombok.Setter;
 @Table
 @Getter
 @Setter
-public class ProductCategory {
+public class Category {
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
