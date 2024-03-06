@@ -4,7 +4,6 @@ import com.ecom.practice.Dto.Request.AddProduct;
 import com.ecom.practice.Entity.Product;
 import com.ecom.practice.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,8 +16,8 @@ public class ProductController {
   @Autowired
   private ProductService productService;
 
-  @PostMapping(consumes = {"multipart/form-data"})
-  public ResponseEntity<?> addProduct( @RequestPart AddProduct addProduct,
+  @PostMapping
+  public ResponseEntity<?> addProduct(@RequestPart AddProduct addProduct,
                                        @RequestPart MultipartFile image) throws IOException {
     addProduct.setData(image);
     Product product = productService.addProduct(addProduct);

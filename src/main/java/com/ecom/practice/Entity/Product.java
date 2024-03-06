@@ -25,5 +25,6 @@ public class Product {
   private double price;
 
   @Lob
+  @Column(name = "data", columnDefinition = "LONGBLOB")
   private byte[] data;
 }
